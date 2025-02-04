@@ -11,7 +11,7 @@ let ready = false;    // クリック可能状態かどうかのフラグ
 gameArea.addEventListener('click', () => {
   if (!waiting && !ready) {
     // 初期状態: ゲーム開始
-    gameArea.textContent = "Get Ready...";
+    gameArea.textContent = "準備中...";
     result.textContent = "";
     waiting = true;
     
@@ -20,7 +20,7 @@ gameArea.addEventListener('click', () => {
     timeoutID = setTimeout(() => {
       // 待機時間が経過したらクリック可能状態にする
       gameArea.style.backgroundColor = '#27ae60';  // 背景色を緑に変更
-      gameArea.textContent = "Click Now!";
+      gameArea.textContent = "今すぐクリック!";
       startTime = new Date();  // クリック可能になった時刻を記録
       ready = true;
       waiting = false;
@@ -30,9 +30,9 @@ gameArea.addEventListener('click', () => {
     // 待機中にクリックした場合 → 早すぎるクリックと判定
     clearTimeout(timeoutID);  // 待機タイマーをキャンセル
     waiting = false;
-    gameArea.textContent = "Too Soon!";
+    gameArea.textContent = "クリックしすぎ！";
     gameArea.style.backgroundColor = '#e74c3c';  // 背景色を赤に変更
-    result.textContent = "You clicked too early. Try again.";
+    result.textContent = "早すぎました。もう一度試してください。";
     // 少し表示後にリセット
     setTimeout(resetGame, 1500);
     
@@ -40,8 +40,8 @@ gameArea.addEventListener('click', () => {
     // 正常なクリック: 反応時間を計測
     const endTime = new Date();
     const reactionTime = endTime - startTime;
-    gameArea.textContent = "Results";
-    result.textContent = "Reaction Time: " + reactionTime + " ms";
+    gameArea.textContent = "結果発表";
+    result.textContent = "反応速度: " + reactionTime + " ミリ秒";
     gameArea.style.backgroundColor = '#3498db';  // 背景色を元に戻す
     ready = false;
     // 結果表示後、ゲームをリセット
@@ -49,9 +49,10 @@ gameArea.addEventListener('click', () => {
   }
 });
 
-// ゲーム状態を初期状態にリセットする関数
+// ゲーム状態を初期状態にリセットする関数a
 function resetGame() {
-  gameArea.textContent = "Click to Start";
+  gameArea.textContent = "クリックして開始";
   gameArea.style.backgroundColor = '#3498db';
   result.textContent = "";
 }
+
