@@ -1,0 +1,20 @@
+body {
+  text-align: center;
+  font-family: sans-serif;
+  margin-top: 50px;
+}
+
+#gameArea {
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  background-color: #3498db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  border: 3px solid #2980b9;
+  user-select: none;
+}
