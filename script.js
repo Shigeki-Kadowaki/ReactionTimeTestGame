@@ -49,9 +49,10 @@ gameArea.addEventListener('click', () => {
   }
 });
 
-// ゲーム状態を初期状態にリセットする関数
+// ゲーム状態を初期状態にリセットする関数a
 function resetGame() {
   gameArea.textContent = "クリックして開始";
   gameArea.style.backgroundColor = '#3498db';
   result.textContent = "";
 }
+
