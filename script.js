@@ -56,3 +56,4 @@ function resetGame() {
   result.textContent = "";
 }
 
+//hotfixバグ修正
